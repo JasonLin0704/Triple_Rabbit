@@ -8,13 +8,14 @@ This is a website game inspired by Triple Town.
 ## Goal
 Try to get as many points as possible!
 
+## Item
+![Objects](https://user-images.githubusercontent.com/71300686/175891257-654f3b47-fe08-4be3-9520-0bc1e2080164.png)
+
 ## Rules
 1. Combine and Upgrade
     - Put the same items together. If the number >= 3, then the last item put on will upgrade and others will disappear.
     - Allow chain upgradations, which means after one item upgrading, there might another upgradation happening at the same spot.
     - Blue arrows demonstrate the valid upgrading directions; red texts indicate the points can get after upgradation. 
-
-![Objects](https://user-images.githubusercontent.com/71300686/175891257-654f3b47-fe08-4be3-9520-0bc1e2080164.png)
 
 2. Repel rabbits
     - There are two rabbits: normal rabbits and G8rabbits.
