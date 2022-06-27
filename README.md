@@ -8,7 +8,7 @@ This is a website game inspired by Triple Town.
 ## Goal
 Try to get as many points as possible!
 
-## Item
+## Items
 ![Objects](https://user-images.githubusercontent.com/71300686/175891257-654f3b47-fe08-4be3-9520-0bc1e2080164.png)
 
 ## Rules
