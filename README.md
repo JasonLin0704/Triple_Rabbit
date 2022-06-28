@@ -9,7 +9,7 @@ This is a website game inspired by Triple Town.
 Try to get as many points as possible!
 
 ## Items
-![Objects](https://user-images.githubusercontent.com/71300686/175891257-654f3b47-fe08-4be3-9520-0bc1e2080164.png)
+![Objects_english](https://user-images.githubusercontent.com/71300686/176180221-450d7ebe-0566-4889-9789-99e1c3678444.png)
 
 ## Rules
 1. Combine and Upgrade
