@@ -25,3 +25,6 @@ Try to get as many points as possible!
 3. Special items
     - Crystal: it can combine with many items, considering the priority: CARROTS > CARROT > HOUSE > TREE > BUSH > GRASS.
     - Hammer: it can destroy anything, also drive out a rabbit.
+
+## Real game screen
+![image](https://user-images.githubusercontent.com/71300686/184495173-e822490e-7b28-431c-95f3-2f79fbe40545.png)
