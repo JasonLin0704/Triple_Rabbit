@@ -10,6 +10,7 @@ Try to get as many points as possible!
 
 ## Items
 Draw by myself!
+
 <img src="https://user-images.githubusercontent.com/71300686/176180221-450d7ebe-0566-4889-9789-99e1c3678444.png" width=757px height=497px>
 
 ## Rules
