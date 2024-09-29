@@ -2,8 +2,12 @@
 This is a website game inspired by Triple Town.
 
 ## How to start a game?
-1. Download all files and put them under the same folder path. 
-2. Open the .html file and then you can play!
+1. Directly play via GitHub Pages.
+   - https://jasonlin0704.github.io/Triple_Rabbit/TripleRabbit.html
+     
+2. Play on your PC
+   - Download all files and put them under the same folder path.
+   - Open the .html file and then you can play!
 
 ## Your goal
 Try to get as many points as possible!
