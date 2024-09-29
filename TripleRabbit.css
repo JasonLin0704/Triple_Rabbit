@@ -19,7 +19,7 @@ div#gameContainer {
 h1#title {
     /* position: relative; */
     /* margin: 30px auto; */
-    height: 20%;
+    height: 15%;
     font-size: 5vh;
     display: flex;
     justify-content: center; 
@@ -83,7 +83,7 @@ button#holdButton, button#newGameButton {
 
 div#blockContainer {
     /* position: absolute; */
-    height: 60%;
+    height: 65%;
     display: grid;
 }
 

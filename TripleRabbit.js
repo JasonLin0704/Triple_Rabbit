@@ -6,7 +6,7 @@ const WindowHeight = window.innerHeight;
 console.log(WindowWidth, WindowHeight);
 
 const GameContainerHeight = WindowHeight * 0.98;
-const GameContainerWidth = GameContainerHeight * 0.6;
+const GameContainerWidth = GameContainerHeight * 0.65;
 console.log(GameContainerWidth, GameContainerHeight);
 
 const BlockRowNumber = 6;
