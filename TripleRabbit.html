@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Jason Lin">
-    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- icon link -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico"> <!-- icon link -->
     <link rel="stylesheet" type="text/css" href="TripleRabbit.css"> <!-- CSS link -->
     <title>Triple Rabbit</title>
 </head>
 <body>
     <div id="gameContainer">
-        <h1 id="title">\ Triple Rabbit /</h1>
+        <h1 id="title">Triple Rabbit</h1>
         <div id="optionContainer">
             <!-- Hold -->
-            <button type="button" class="option optionFirstRow" id="holdButton">click me</button>
-            <div class="option optionSecondRow" id="holdButtonText">Hold</div>
+            <div class="option optionFirstRow" id="holdImage"></div>
+            <button type="button" class="option optionSecondRow" id="holdButton">Hold</button>
             <!-- Next Item -->
-            <button type="button" class="option optionFirstRow" id="currItemButton"></button>
-            <div class="option optionSecondRow" id="currItemText">Current Item</div>
+            <div class="option optionFirstRow" id="currImage"></div>
+            <div class="option optionSecondRow" id="currText">Current Item</div>
             <!-- Points -->
             <div class="option optionFirstRow" id="points"></div>
             <div class="option optionSecondRow" id="pointsText">Points</div>
             <!-- New Game -->
-            <button type="button" class="option optionFirstRow" id="newGameButton">New Game</button>
+            <button type="button" class="option optionSecondRow" id="newGameButton">New Game</button>
             <!-- <div class="option optionSecondRow" id="newGameText"></div> -->
         </div>
         <script src="TripleRabbit.js"></script> <!-- JavaScript link -->

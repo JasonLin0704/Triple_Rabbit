@@ -1,106 +1,106 @@
 @charset "utf-8";
 
-*{
+* {
     margin: 0px;
     padding: 0px;
+    font-family: Arial;
 }
 
-div#gameContainer{
-    position: relative;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 8px solid gray;
-    border-radius: 20px;
+div#gameContainer {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0 auto;
+    border: 4px solid rgb(100, 100, 100);
+    border-radius: 15px;
 }
 
-h1#title{
-    position: relative;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
+h1#title {
+    /* position: relative; */
+    /* margin: 30px auto; */
+    height: 20%;
     font-size: 3em;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
-    text-shadow: 3px 3px 5px gray;
 }
 
-div#optionContainer{
-    position: relative;
+div#optionContainer {
+    /* position: absolute; */
+    height: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    /* border: 1px solid gray; */
-    /* background-color: rgb(192, 161, 136); */
+    grid-template-rows: 1fr 1fr 2fr;
+    align-items: center; 
 }
 
-.option{
-    display: block;
+.option {
+    display: grid;
+}
+
+.optionFirstRow {
+    justify-items: center; 
+}
+
+.optionSecondRow {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+div#holdImage { grid-column: 1; grid-row: 1 / span 2; }
+
+div#currImage { grid-column: 2; grid-row: 1 / span 2; }
+
+div#points { grid-column: 3; grid-row: 1 / span 2; }
+
+button#holdButton { grid-column: 1; grid-row: 3; }
+
+div#currText { grid-column: 2; grid-row: 3; }
+
+div#pointsText { grid-column: 3; grid-row: 3; }
+
+button#newGameButton { grid-column: 4; grid-row: 3; }
+
+div#holdImage, div#currImage {
+    padding: 5%;
+    margin: 0% 10%;
+    border: 1px solid rgba(144, 144, 144, 0.5);
+    border-radius: 5px;
+    min-height: 110%;
+    min-width: 70%;
+}
+
+button#holdButton, button#newGameButton {
+    padding: 10%;
+    margin: 10%;
+    cursor: pointer;
+    border: 1px solid rgb(145, 145, 145);
+    border-radius: 15px;
+    box-shadow: 0px 5px rgb(197, 197, 197);
     background-color: white;
 }
-.optionFirstRow{
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-}
-.optionSecondRow{
-    margin: 0px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid black;
-}
 
-button#holdButton{ 
-    grid-column: 1; grid-row: 1 / span 2; 
-    margin: 10px;
-    cursor: pointer;
-    border: 1px solid rgb(145, 145, 145);
-    border-radius: 15px;
-    box-shadow: 0px 5px rgb(197, 197, 197);
-}
-
-button#currItemButton{ 
-    grid-column: 2; grid-row: 1 / span 2; 
-    border: none;
-}
-
-div#points{ 
-    grid-column: 3; grid-row: 2; 
-}
-
-button#newGameButton{ 
-    grid-column: 4; grid-row: 3;
-    margin: 10px;
-    cursor: pointer;
-    border: 1px solid rgb(145, 145, 145);
-    border-radius: 15px;
-    box-shadow: 0px 5px rgb(197, 197, 197);
-}
-
-div#holdButtonText{ grid-column: 1; grid-row: 3; }
-
-div#currItemText{ grid-column: 2; grid-row: 3; }
-
-div#pointsText{ grid-column: 3; grid-row: 3; }
-
-div#newGameText{ grid-column: 4; grid-row: 3; }
-
-div#blockContainer{
-    position: absolute;
+div#blockContainer {
+    /* position: absolute; */
+    height: 60%;
     display: grid;
-    text-align: center;
 }
 
-div.block{
-    border: 1px solid black;
+div.block {
+    display: grid;
+    align-items: center;    /* Horizontal */
+    justify-items: center;  /* Vertical */
+    border: 1px solid rgba(144, 144, 144, 0.5);
+    border-radius: 5px;
 }
 
-div.block:hover{
-    border: 1px solid black;
-    background-color: rgba(197, 197, 197, 0.562);
+div.block:hover {
+    border: 1px solid rgb(144, 144, 144);
+    background-color: rgba(144, 144, 144, 0.3);
 }
 
-div.block > img{
+/* div.block > img {
     margin-top: 4px;
-}
+} */

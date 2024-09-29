@@ -1,23 +1,26 @@
 "use strict"
 
 /* -------------------- ### Constant -------------------- */
-
-// There's a problem when open F12, the window size would change, so it's kind of weird
-// i.e. the window width changes from 1920 to 1472
+const WindowWidth = window.innerWidth;
 const WindowHeight = window.innerHeight; 
-const WindowWidth = window.innerWidth; 
-// const WindowWidth = 1920;
+console.log(WindowWidth, WindowHeight);
 
-const GameContainerHeight = WindowHeight * 0.95;
-const GameContainerWidth = WindowWidth * 0.3;
+const GameContainerHeight = WindowHeight * 0.98;
+const GameContainerWidth = GameContainerHeight * 0.6;
+console.log(GameContainerWidth, GameContainerHeight);
 
-const BlockColumnNumber = 6;
 const BlockRowNumber = 6;
-const BlockNumber = BlockColumnNumber * BlockRowNumber;
+const BlockColumnNumber = 6;
+const BlockNumber = BlockRowNumber * BlockColumnNumber;
 const BlockSideLength = GameContainerWidth / BlockColumnNumber;
 
-const BlockContainerWidth = GameContainerWidth; // want to fit blockContainerWidth into GameContainerWidth
-const BlockContainerHeight = (BlockContainerWidth / BlockRowNumber) * BlockColumnNumber;
+const BlockContainerWidth = GameContainerWidth;
+const BlockContainerHeight = (BlockContainerWidth / BlockColumnNumber) * BlockRowNumber; // Reason: we want to decide the size of blockContainer after the number of blocks adjusted
+console.log(BlockContainerWidth, BlockContainerHeight);
+
+const OptionContainerWidth = GameContainerWidth;
+const OptionContainerHeight = GameContainerHeight * 0.2;
+console.log(OptionContainerWidth, OptionContainerHeight);
 
 const ItemName = [
     "GRASS", "BUSH", "TREE", "HOUSE", "CASTLE",
@@ -27,8 +30,8 @@ const ItemName = [
 
 /* 100 in total */
 const Possibility = [
-    45, 20, 10, 5, 0, 
-    10, 5, 0, 0,
+    45, 25, 10, 5, 0, 
+    7, 3, 0, 0,
     0, 3, 2 
 ];
 
@@ -89,7 +92,7 @@ class Block{
                 case "BUSH":
                 case "TREE":
                 case "HOUSE":
-                    //May combine and upgrade twice successively
+                    // It may combine and upgrade twice successively
                     this.item = itemPool[currImgIndex];
                     while(this.bfsForCombination(this.item)){
                         this.upgrade();
@@ -565,8 +568,8 @@ class Block{
 /* Load all images in advance */
 function loadImage(){
     for(let k = 0; k < ItemName.length; k++){
-        let item = ItemName[k]; //properties
-        let imgArray = []; //keys
+        let item = ItemName[k]; // properties
+        let imgArray = []; // keys
 
         /* For blocks */
         for(let i = 0; i < BlockRowNumber; i++){
@@ -617,11 +620,19 @@ function createBlockContainer(){
 /* Set properties of the block container */
 function setPropertyOfBlockContainer(){
     blockContainer.id = "blockContainer";
-    blockContainer.style.height = BlockContainerHeight + "px";
-    blockContainer.style.width = BlockContainerWidth + "px";
-    blockContainer.style.top = GameContainerHeight - BlockContainerHeight + "px";
+    // blockContainer.style.height = BlockContainerHeight + "px";
+    // blockContainer.style.width = BlockContainerWidth + "px";
+    // blockContainer.style.top = GameContainerHeight * 0.4 + "px";
     blockContainer.style.gridTemplateColumns = `repeat(${BlockColumnNumber}, 1fr)`;
     blockContainer.style.gridTemplateRows = `repeat(${BlockRowNumber}, 1fr)`;
+}
+
+/* Set properties of the option container */
+function setPropertyOfOptionContainer(){
+    optionContainer = document.getElementById("optionContainer");
+    // optionContainer.style.height = OptionContainerHeight + "px";
+    // optionContainer.style.width = OptionContainerWidth + "px";
+    // optionContainer.style.top = GameContainerHeight * 0.2 + "px";
 }
 
 /* -------------------- About Hold Item -------------------- */
@@ -629,8 +640,8 @@ function setPropertyOfBlockContainer(){
 /* Update the image of the hold button */ 
 function updateImageOfHoldItem(){
     if(holdItem != "none"){
-        if(holdButton.firstChild) holdButton.removeChild(holdButton.firstChild);
-        holdButton.appendChild(imgs[holdItem][BlockNumber]);
+        if(holdImage.firstChild) holdImage.removeChild(holdImage.firstChild);
+        holdImage.appendChild(imgs[holdItem][BlockNumber]);
     }
 }
 
@@ -680,8 +691,8 @@ function resetItemPool(){
     
 /* Update the image of the current item */ 
 function updateImageOfCurrItem(){ 
-    if(currItemButton.firstChild) currItemButton.removeChild(currItemButton.firstChild);
-    currItemButton.appendChild(imgs[itemPool[currImgIndex]][BlockNumber + 1]);
+    if(currImage.firstChild) currImage.removeChild(currImage.firstChild);
+    currImage.appendChild(imgs[itemPool[currImgIndex]][BlockNumber + 1]);
 }
 
 /* -------------------- About Blocks -------------------- */
@@ -749,7 +760,6 @@ function setEventOfNewGameButton(){
         resetItemPool();
         holdItem = "none";
         updateImageOfHoldItem();
-        holdButton.innerText = "click me";
         updateImageOfCurrItem();
         for(let block of blocks) block.resetBlock();
         initializeBlocks();
@@ -817,9 +827,10 @@ let itemPool = [];
 
 let gameContainer;
 let blockContainer;
+let optionContainer;
 
-let holdButton, holdItem;
-let currItemButton;
+let holdItem, holdImage, holdButton;
+let currImage;
 let pointDiv, points;
 let newGameButton;
 
@@ -838,21 +849,23 @@ setSizeOfGameContainer();
 /* Block Container */
 createBlockContainer();
 setPropertyOfBlockContainer();
+setPropertyOfOptionContainer();
 
-console.log("window size: ", window.innerWidth);
 // console.log(gameContainer.getBoundingClientRect());
 // console.log(optionContainer.getBoundingClientRect());
 // console.log(blockContainer.getBoundingClientRect());
 
 /* Hold Button */
-holdButton = document.getElementById("holdButton");
 holdItem = "none";
+holdImage = document.getElementById("holdImage");
+holdButton = document.getElementById("holdButton");
 setEventOfHoldButton();
 
 /* Current Item Button */
 fillItemPool(); console.log(itemPool);
 resetItemPool();
-currItemButton = document.getElementById("currItemButton");
+// currItemButton = document.getElementById("currItemButton");
+currImage = document.getElementById("currImage");
 updateImageOfCurrItem();
 
 /* Points */
