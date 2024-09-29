@@ -33,5 +33,8 @@ Draw by myself!
     - Hammer: it can destroy anything, also drive out a rabbit.
 
 ## Real game screen
-![image](https://github.com/JasonLin0704/Triple_Rabbit/assets/71300686/ef9dcff4-4a6a-4396-8b7c-b0e47e7ee6c0)
+![image](https://github.com/user-attachments/assets/e586d584-6800-4b1b-879e-597bbf633ac4)
+
+
+
 
