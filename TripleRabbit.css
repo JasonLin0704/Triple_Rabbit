@@ -20,7 +20,7 @@ h1#title {
     /* position: relative; */
     /* margin: 30px auto; */
     height: 20%;
-    font-size: 3em;
+    font-size: 5vh;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -38,6 +38,8 @@ div#optionContainer {
 
 .option {
     display: grid;
+    align-items: center;    /* Vertical */
+    font-size: 1.6vh;
 }
 
 .optionFirstRow {
@@ -45,7 +47,6 @@ div#optionContainer {
 }
 
 .optionSecondRow {
-    font-size: 0.9em;
     text-align: center;
 }
 
@@ -64,12 +65,10 @@ div#pointsText { grid-column: 3; grid-row: 3; }
 button#newGameButton { grid-column: 4; grid-row: 3; }
 
 div#holdImage, div#currImage {
-    padding: 5%;
     margin: 0% 10%;
     border: 1px solid rgba(144, 144, 144, 0.5);
     border-radius: 5px;
-    min-height: 110%;
-    min-width: 70%;
+    min-height: 100%;
 }
 
 button#holdButton, button#newGameButton {
@@ -90,8 +89,8 @@ div#blockContainer {
 
 div.block {
     display: grid;
-    align-items: center;    /* Horizontal */
-    justify-items: center;  /* Vertical */
+    align-items: center;    /* Vertical */
+    justify-items: center;  /* Horizontal */
     border: 1px solid rgba(144, 144, 144, 0.5);
     border-radius: 5px;
 }
