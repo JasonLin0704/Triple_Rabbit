@@ -639,10 +639,8 @@ function setPropertyOfOptionContainer(){
 
 /* Update the image of the hold button */ 
 function updateImageOfHoldItem(){
-    if(holdItem != "none"){
-        if(holdImage.firstChild) holdImage.removeChild(holdImage.firstChild);
-        holdImage.appendChild(imgs[holdItem][BlockNumber]);
-    }
+    if (holdImage.firstChild) holdImage.removeChild(holdImage.firstChild);
+    if (holdItem != "none") holdImage.appendChild(imgs[holdItem][BlockNumber]);
 }
 
 /* Set the event of the hold button */
